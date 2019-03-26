@@ -1,9 +1,9 @@
 package co.cantina.swoosh
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_league.*
+import android.view.View
+
 
 class LeagueActivity : BaseActivity() {
 
@@ -11,9 +11,10 @@ class LeagueActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
 
-        leagueNextButton.setOnClickListener {
-            val leagueIntent = Intent(this, SkillActivity::class.java)
-            startActivity(leagueIntent)
-        }
+    }
+
+    fun leagueNextClicked(view: View){
+        val leagueIntent = Intent(this, SkillActivity::class.java)
+        startActivity(leagueIntent)
     }
 }
