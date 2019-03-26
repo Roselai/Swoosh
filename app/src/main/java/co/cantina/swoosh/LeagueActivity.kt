@@ -3,6 +3,7 @@ package co.cantina.swoosh
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_league.*
 
 
@@ -20,6 +21,9 @@ class LeagueActivity : BaseActivity() {
         if (selectedLeague != "") {
             val leagueIntent = Intent(this, SkillActivity::class.java)
             startActivity(leagueIntent)
+        } else {
+            Toast.makeText(this, "Please select a league", Toast.LENGTH_SHORT ).show()
+
         }
     }
 
