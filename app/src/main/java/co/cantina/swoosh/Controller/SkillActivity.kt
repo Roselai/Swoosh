@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.view.View
 import co.cantina.swoosh.Utilities.EXTRA_LEAGUE
 import co.cantina.swoosh.R
+import kotlinx.android.synthetic.main.activity_skill.*
 
 class SkillActivity : BaseActivity() {
 
     var league = ""
+    var skill = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +21,19 @@ class SkillActivity : BaseActivity() {
     }
 
     fun onSkillFinishClicked(view: View) {
-        val finishActivity = Intent(this, FinishActivity::class.java)
-        startActivity(finishActivity)
+        if (skill != "") {
+            val finishActivity = Intent(this, FinishActivity::class.java)
+            startActivity(finishActivity)
+        }
+    }
+
+    fun onBeginnerClick(view: View) {
+        ballerSkillButton.isChecked = false
+        skill = "beginner"
+    }
+
+    fun onBallerClick(view: View){
+        beginnerSkillButton.isChecked = false
+        skill = "baller"
     }
 }
