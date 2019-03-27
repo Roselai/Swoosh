@@ -28,7 +28,7 @@ class SkillActivity : BaseActivity() {
             finishActivity.putExtra(EXTRA_LEAGUE, league)
             startActivity(finishActivity)
         } else {
-            Toast.makeText(this, "please select a skill", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "please select a skill level", Toast.LENGTH_SHORT).show()
         }
     }
 
