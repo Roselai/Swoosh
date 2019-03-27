@@ -13,11 +13,25 @@ class SkillActivity : BaseActivity() {
 
     lateinit var player : Player
 
+    //saving instance for when device is rotated
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        outState?.putParcelable(EXTRA_PLAYER, player)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_skill)
 
         player = intent.getParcelableExtra(EXTRA_PLAYER)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        if (savedInstanceState != null) {
+            player = savedInstanceState.getParcelable(EXTRA_PLAYER)
+        }
+
     }
 
     fun onSkillFinishClicked(view: View) {
