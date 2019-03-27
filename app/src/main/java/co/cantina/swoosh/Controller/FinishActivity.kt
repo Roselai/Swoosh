@@ -1,10 +1,9 @@
 package co.cantina.swoosh.Controller
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import co.cantina.swoosh.Model.Player
 import co.cantina.swoosh.R
-import co.cantina.swoosh.Utilities.EXTRA_LEAGUE
-import co.cantina.swoosh.Utilities.EXTRA_SKILL
+import co.cantina.swoosh.Utilities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_skill.*
 
 class FinishActivity : BaseActivity() {
@@ -13,8 +12,7 @@ class FinishActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finish)
 
-        val league = intent.getStringExtra(EXTRA_LEAGUE)
-        val skill = intent.getStringExtra(EXTRA_SKILL)
-        searchLeaguesText.text = "Looking for a $league $skill league near you"
+        val player = intent.getParcelableExtra<Player>(EXTRA_PLAYER)
+        searchLeaguesText.text = "Looking for a ${player.league} ${player.skill} league near you"
     }
 }

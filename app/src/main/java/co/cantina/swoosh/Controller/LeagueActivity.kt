@@ -5,14 +5,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import co.cantina.swoosh.Model.Player
-import co.cantina.swoosh.Utilities.EXTRA_LEAGUE
 import co.cantina.swoosh.R
+import co.cantina.swoosh.Utilities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_league.*
 
 
 class LeagueActivity : BaseActivity() {
 
-    var selectedLeague = ""
     var player = Player("", "")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +23,7 @@ class LeagueActivity : BaseActivity() {
     fun leagueNextClicked(view: View){
         if (player.league != "") {
             val skillActivity = Intent(this, SkillActivity::class.java)
-            skillActivity.putExtra(EXTRA_LEAGUE, player.league)
+            skillActivity.putExtra(EXTRA_PLAYER, player)
             startActivity(skillActivity)
         } else {
             Toast.makeText(this, "Please select a league", Toast.LENGTH_SHORT ).show()
