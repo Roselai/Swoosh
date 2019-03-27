@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import co.cantina.swoosh.Utilities.EXTRA_LEAGUE
 import co.cantina.swoosh.R
+import co.cantina.swoosh.Utilities.EXTRA_SKILL
 import kotlinx.android.synthetic.main.activity_skill.*
 
 class SkillActivity : BaseActivity() {
@@ -17,12 +18,13 @@ class SkillActivity : BaseActivity() {
         setContentView(R.layout.activity_skill)
 
         league = intent.getStringExtra(EXTRA_LEAGUE)
-        println(league)
     }
 
     fun onSkillFinishClicked(view: View) {
         if (skill != "") {
             val finishActivity = Intent(this, FinishActivity::class.java)
+            finishActivity.putExtra(EXTRA_SKILL, skill)
+            finishActivity.putExtra(EXTRA_LEAGUE, league)
             startActivity(finishActivity)
         }
     }
