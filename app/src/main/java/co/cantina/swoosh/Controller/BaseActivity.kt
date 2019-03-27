@@ -1,4 +1,4 @@
-package co.cantina.swoosh
+package co.cantina.swoosh.Controller
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

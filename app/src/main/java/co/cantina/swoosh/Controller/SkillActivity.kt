@@ -1,6 +1,8 @@
-package co.cantina.swoosh
+package co.cantina.swoosh.Controller
 
 import android.os.Bundle
+import co.cantina.swoosh.Utilities.EXTRA_LEAGUE
+import co.cantina.swoosh.R
 
 class SkillActivity : BaseActivity() {
 
