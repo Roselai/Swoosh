@@ -3,6 +3,7 @@ package co.cantina.swoosh.Controller
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import co.cantina.swoosh.Utilities.EXTRA_LEAGUE
 import co.cantina.swoosh.R
 import co.cantina.swoosh.Utilities.EXTRA_SKILL
@@ -26,6 +27,8 @@ class SkillActivity : BaseActivity() {
             finishActivity.putExtra(EXTRA_SKILL, skill)
             finishActivity.putExtra(EXTRA_LEAGUE, league)
             startActivity(finishActivity)
+        } else {
+            Toast.makeText(this, "please select a skill", Toast.LENGTH_SHORT).show()
         }
     }
 
